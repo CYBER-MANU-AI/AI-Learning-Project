@@ -1,0 +1,22 @@
+# Demo session commands for Jaseci
+
+# 1. Seed example data (creates concept, 3 lessons, and user)
+jac run ../walkers.jac --run 'seed_example_data()'
+
+# 2. List concepts
+jac run ../walkers.jac --run 'list_concepts()'
+
+# 3. List lessons for test concept
+jac run ../walkers.jac --run 'list_lessons(concept_id="c_test")'
+
+# 4. Run learning flow for test user (simulated answers)
+# fetch the test_user node and pass it to learn
+jac run ../walkers.jac --run 'learn(std.find_node(user, .username == "test_user"), concept_id="c_test")'
+
+# 5. View user progress
+jac run ../walkers.jac --run 'view_user_progress(std.find_node(user, .username == "test_user"))'
+
+# 6. Debug graph
+jac run ../walkers.jac --run 'debug_graph()'
+
+# Expected outputs are printed to the console by the walkers
