@@ -1,46 +1,41 @@
 
-node user{
+node user {
     has username: str;
     has mastery_map: dict;
     has current_node: str;
 }
 
-node concept{
+node concept {
     has concept_id: str;
     has title: str;
     has description: str;
 }
 
-node lesson{
+node lesson {
     has lesson_id: str;
     has title: str;
     has content: str;
     has concept_id: str;
 }
 
-node quiz{
+node quiz {
     has quiz_id: str;
     has lesson_id: str;
     has concept_id: str;
     has content: str;
 }
 
-edge prerequisite{
-}
+edge prerequisite {}
 
-edge has_lesson{
-}
+edge has_lesson {}
 
-edge has_quiz{
-}
+edge has_quiz {}
 
-edge completed_lesson{
-}
+edge completed_lesson {}
 
-edge took_quiz{
+edge took_quiz {
     has answers: str;
     has score: int;
 }
 
-edge answered_quiz{
-}
+edge answered_quiz {}
