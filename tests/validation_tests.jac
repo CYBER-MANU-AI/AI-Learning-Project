@@ -5,7 +5,7 @@ walker validation_tests {
         concepts = std.nodes(concept);
         lessons = std.nodes(lesson);
         users = std.nodes(user);
-        if concepts.len() == 0 {
+            if concepts.len() == 0 {
             print("FAIL: no concepts found");
             return;
         }
@@ -20,4 +20,4 @@ walker validation_tests {
         print("PASS: concepts=" + std.str(concepts.len()) + ", lessons=" + std.str(lessons.len()) + ", users=" + std.str(users.len()));
         self.passed = true;
     }
-}
+    }

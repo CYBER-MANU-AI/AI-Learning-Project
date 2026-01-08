@@ -1,0 +1,32 @@
+# Demo CLI session for AI Learning Project
+
+# 1. Start Jaseci (in a separate terminal) and ensure jac is available
+# 2. From project root:
+
+# Seed example data
+root spawn seed_example_data();
+
+# List concepts
+root spawn list_concepts();
+
+# List lessons for concept
+root spawn list_lessons(concept_id="c_test");
+
+# View user (seeded) progress
+u = std.nodes(user)[0];
+root spawn view_user_progress(user_ref=u);
+
+# Serve next lesson for the user
+root spawn serve_lesson(user_ref=u, concept_id="c_test");
+
+# Generate a quiz for current lesson
+root spawn generate_quiz(user_ref=u);
+
+# Take a quiz (use quiz id printed from generate_quiz result)
+root spawn take_quiz(user_ref=u, quiz_id="<quiz_id>", answers=["a","b","c"]);
+
+# Run the learn orchestrator
+root spawn learn(user_ref=u, concept_id="c_test");
+
+# Run validation tests
+root spawn validation_tests.validate();

@@ -11,6 +11,19 @@ Follow Jaseci docs to enable the REST API server. Typical steps:
 
 Suggested endpoints
 -------------------
+# Jaseci REST API Endpoints (example)
+
+This file outlines recommended REST endpoints if you enable the Jaseci REST API, mapping to walkers in `walkers.jac`.
+
+Enable the REST API
+-------------------
+Follow Jaseci docs to enable the REST API server. Typical steps:
+
+- Configure `JASECI_REST` or start the `jaseci_server` with REST enabled.
+- Ensure your environment has authentication configured if required.
+
+Suggested endpoints
+-------------------
 - POST /api/learn
   - Body: { "username": "test_user", "concept_id": "c_test" }
   - Action: find `user` node by username and call `learn(user, concept_id)` walker
